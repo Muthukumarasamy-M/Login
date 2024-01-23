@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Signup</title>
+<link rel="stylesheet" href="./SignupStyle.css" />
+</head>
+
+<body>
+	<div class="container">
+		<form id="signupform" action="Signup" method="post"
+			onsubmit="return validate()">
+			<h1>Sign up</h1>
+			<p id="signupMessage"></p>
+			<input type="text" id="newUsername" name="newUsername"
+				placeholder="Username" required /> <input type="email" name="email"
+				placeholder="Email" required /> <input type="password"
+				name="Npassword" id="newPassword" placeholder="Password" required />
+			<input type="password" id="confirmPassword" name="Cpassword"
+				placeholder="Confirm Password" required /> <input type="submit"
+				value="Sign Up" />
+		</form>
+		<script type="text/javascript">
+			const urlParams = new URLSearchParams(window.location.search);
+			const signupMessageParam = urlParams.get('signupMessage');
+			if (signupMessageParam) {
+				const signupMessageElement = document
+						.getElementById("signupMessage");
+				signupMessageElement.textContent = decodeURIComponent(signupMessageParam);
+
+				if (signupMessageParam.includes('Successfull')) {
+					signupMessageElement.style.color = "green";
+					setTimeout(function() {
+						window.location.href = "Login.html";
+					}, 1000);
+				} else {
+					signupMessageElement.style.color = "red";
+				}
+			}
+			function validate() {
+				const newUsername = document.getElementById("newUsername").value;
+				const newPassword = document.getElementById("newPassword").value;
+				const confirmPassword = document
+						.getElementById("confirmPassword").value;
+				const signupMessage = document.getElementById("signupMessage");
+
+				if (newPassword === confirmPassword) {
+					const newUser = {
+						username : newUsername,
+						password : newPassword
+					};
+				} else {
+					signupMessage.textContent = "Passwords do not match. Please check and try again.";
+					signupMessage.style.color = "red";
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</div>
+</body>
+</html>

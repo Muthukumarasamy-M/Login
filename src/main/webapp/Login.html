@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="./LoginStyle.css">
+</head>
+<body>
+	<div class="container">
+		<form id="loginform" action="Login" method="post">
+			<h1>Login</h1>
+			<p id="loginMessage"></p>
+			<input type="text" name="email" placeholder="Username" required />
+			<br /> <input type="text" name="Password" placeholder="Password"
+				required /> <br /> 
+			<input type="submit" />
+			<p>don't have an account?</p>
+			<a href="./Signup.html"> signup </a>
+		</form>
+		<script type="text/javascript">
+		
+			const urlparam = new URLSearchParams(window.location.search);
+			const messageParam = urlparam.get('loginMessage');
+			if (messageParam) {
+				window.alert(messageParam);
+				const messageElement = document.getElementById("loginMessage");
+				messageElement.textContent = decodeURIComponent(messageParam);
+				if (messageParam.includes("Successfull")) {
+					messageElement.style.color = "green";
+				} else {
+					messageElement.style.color = "red";
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>

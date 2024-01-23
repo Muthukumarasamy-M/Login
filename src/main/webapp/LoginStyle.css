@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(214, 240, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: rgb(167, 197, 203);
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+h1 {
+  padding-bottom: 30px;
+}
+
+input[type="submit"] {
+  width: 70px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #bfd4c0;
+  font-size: 14px;
+}
+
+input {
+  margin: 10px 0;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+p {
+  display: inline-block; /* Change to inline-block */
+  margin-right: 10px;
+}
+
+a {
+  display: inline-block; /* Change to inline-block */
+  color: #3498db;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+#invalid {
+  color: rgb(222, 66, 66);
+  background-color: rgb(161, 97, 97);
+}
